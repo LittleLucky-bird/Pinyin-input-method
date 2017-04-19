@@ -1,8 +1,8 @@
-# 二元模型
+# 基于二元模型的拼音输入法
+
+本程序使用python3,不涉及任何第三方包。
 
 ### 文件目录结构
-
-- bin:空。因为python程序不需要编译，可跨平台运行。
 
 - src:
     - prepro.py:预处理python程序,用来从语料中提取统计信息。
@@ -20,25 +20,30 @@
 
 ### 使用方法
 
-#### 预训练
+#### 预处理
 进入本文件夹目录，执行：
 ```
-python src/prepro.py -src train_data -o data/pinyin_data
+python3 src/prepro.py -src train_data -o data/pinyin_data
 ```
 
-其中-src指定语料库的文件夹(对于多文件)或者单一文件路径。
+其中-src指定语料库的文件夹(对于多文件)或者单一文件路径。需要将语料文件提前准备好。
 
 #### 进行拼音转换
 
 进入本文件夹目录，执行：
 ```
-python src/pinyin.py -i data/input.txt -o data/output.txt
+python3 src/pinyin.py -i data/input.txt -o data/output.txt
 ```
 就可以将data/input.txt的拼音转换成汉字并且输出到data/output.txt文件中。
 
 或者可以直接进行转换：
 ```
-python src/pinyin.py -s qing hua da xue ji suan ji xi
+>>python3 src/pinyin.py -s qing hua da xue ji suan ji xi
+>>清华大学计算机系
 ```
+
+效果如下，速度还是很快的：
+
+<img src = "./demo.png"></img>
 
 可以直接得到结果。
